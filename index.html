@@ -46,7 +46,12 @@ h1,h2,h3,.display{font-family:'Questrial','Inter',sans-serif;font-weight:400}
 
 /* ===================== HERO ===================== */
 .hero{position:relative;background:var(--hmc-hero);min-height:min(92vh,820px);display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg-layer{position:absolute;inset:-14% 0;z-index:0;background-image:url('./photos/hero-outreach.jpg');background-size:cover;background-position:center 42%;will-change:transform}
+.hero-carousel{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;background-color:#0a0a0a;background-size:cover;background-position:center 30%;opacity:0;transform:scale(1.04);transition:opacity 1.4s ease-in-out;filter:saturate(.95) contrast(1.03)}
+.hero-slide.active{opacity:1;animation:heroKenBurns 9s ease-out forwards}
+@keyframes heroKenBurns{from{transform:scale(1.04)}to{transform:scale(1.10)}}
+@media (prefers-reduced-motion:reduce){.hero-slide.active{animation:none;transform:scale(1.04)}}
+.hero-grain{position:absolute;inset:0;z-index:3;opacity:.055;pointer-events:none;background-size:160px;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,7,7,.74) 0%,rgba(7,7,7,.28) 38%,rgba(7,7,7,.92) 100%)}
 .hero-glow{position:absolute;left:-10%;bottom:-30%;width:70%;height:80%;z-index:1;pointer-events:none;background:radial-gradient(closest-side,rgba(35,61,255,.42),transparent 70%)}
 .hero-inner{position:relative;z-index:2;width:100%;padding:clamp(48px,9vw,110px) 0 clamp(38px,6vw,72px)}
@@ -145,9 +150,15 @@ footer a{color:var(--hmc-accent)}
 
 <!-- ===================== HERO ===================== -->
 <header class="hero hmc-parallax-hero">
-  <div class="hero-bg-layer hmc-bg-layer" aria-hidden="true"></div>
+  <div class="hero-carousel" aria-hidden="true">
+    <div class="hero-slide active" style="background-image:url('./photos/hero-outreach.jpg');background-position:center 42%"></div>
+    <div class="hero-slide" style="background-image:url('./photos/field-operation.jpg');background-position:center 40%"></div>
+    <div class="hero-slide" style="background-image:url('./photos/survey-4th-st.jpg');background-position:center 34%"></div>
+    <div class="hero-slide" style="background-image:url('./photos/outreach-team.jpg');background-position:center 30%"></div>
+  </div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="wrap">
       <p class="hero-eyebrow">SMO &middot; Street Medicine Outreach</p>
@@ -366,6 +377,23 @@ footer a{color:var(--hmc-accent)}
     });
   },{threshold:.35});
   bars.forEach(function(b){ io.observe(b); });
+})();
+</script>
+<script>
+/* Hero carousel. Same structure and 5500ms cadence as the Unstoppable hero. */
+(function(){
+  var slides = document.querySelectorAll('.hero-slide');
+  if (slides.length < 2) return;
+  var i = 0;
+  function start(){
+    setInterval(function(){
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 5500);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();
 </script>
 </body>

@@ -16,6 +16,17 @@ Live target: https://smo.healthmatters.clinic (GitHub Pages, see CNAME)
     assets/site/hmc-buttons-1.0.1.css  shared HMC button system
     photos/                        field photography
 
+## Deploy
+
+GitHub Actions, same workflow as TEAMHMC/Unstoppable: `.github/workflows/deploy.yml`
+uploads the repo root as the Pages artifact on every push to main. Do not switch to
+"deploy from a branch"; every other HMC site uses Actions and this matches.
+
+DNS: `smo` CNAME to `teamhmc.github.io`, set to **DNS only** in Cloudflare (grey cloud),
+matching `unstoppable`. Cloudflare will warn that this exposes the origin IP. That IP is
+GitHub's shared infrastructure, not an HMC server, so the warning does not apply. Proxying
+through the orange cloud commonly breaks Pages TLS issuance.
+
 ## Animation hooks
 
 Driven by `hmc-immersive.js`, copied unmodified from TEAMHMC/Unstoppable:
@@ -23,7 +34,8 @@ Driven by `hmc-immersive.js`, copied unmodified from TEAMHMC/Unstoppable:
 - `[data-reveal]` scroll reveal
 - `.impact-num` count-up. Only matches `^\d+%?$`, so decimals are split:
   the integer animates and the decimal tail sits in a sibling span.
-- `.hmc-bg-layer` hero parallax drift
+- `.hero-slide` hero carousel, 4 slides on a 5500ms cycle with Ken Burns, copied from Unstoppable
+- `.hero-grain` SVG turbulence overlay at .055 opacity
 - `.hmc-kinetic-row` marquee
 
 The immersive layer disables itself under `prefers-reduced-motion`, when GSAP
