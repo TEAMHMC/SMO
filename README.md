@@ -1,10 +1,10 @@
-# Street Medicine Outreach
+# SMO: Street Medicine Outreach
 
 Standalone site for Health Matters Clinic's Street Medicine Outreach program,
 built to match the Unstoppable page so animation and button behaviour are
 identical across HMC surfaces.
 
-Live target: https://streetmedicine.healthmatters.clinic (GitHub Pages, see CNAME)
+Live target: https://smo.healthmatters.clinic (GitHub Pages, see CNAME)
 
 ## Structure
 
