@@ -53,15 +53,11 @@ renders every label twice against 1.0.1.
 
 ## Open items
 
-- **The supply shipping address is a placeholder.** `[ADDRESS TO CONFIRM BEFORE PUBLISHING]`
-  in the Join section must be replaced before this page is promoted anywhere. Two
-  conflicting addresses exist in HMC documents: 1360 S Figueroa St Suite D390 (2026
-  capability statement) and 5211 W Adams Blvd #4 (Feb 2025 Skid Row report). Sending
-  donors to the wrong address wastes their money and our goodwill.
-
 - Report PDFs are not linked yet. Both download buttons point at `#`.
 - HIV brief percentages are not published on the page. The source PDF is
   image-only, so prior-testing, age and race figures need confirming against
   the raw data before any percentage goes live. Recipient count (115) is solid.
-- Confirm the contact number. The report and the hero photo shirt both show a
-  213 number; the 2026 capability statement uses (323) 990-4325.
+- The hero photograph shows a shirt printed with the old (213) 344-2020 number.
+  Nothing can be edited out of the photo. Either accept it, retouch it, or swap
+  the hero for a shot without visible contact details. HMC's number is
+  (323) 990-4325 and the address is 1360 S Figueroa St, Suite D390.
