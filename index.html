@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Questrial&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/css/hmc-parallax.css">
-<link rel="stylesheet" href="./assets/site/hmc-buttons-1.0.1.css">
+<link rel="stylesheet" href="./assets/site/hmc-buttons-1.0.3.css">
 
 <style>
 :root{
@@ -29,7 +29,6 @@
   --hmc-bg:#f5f3ef;
   --hmc-text:#0a0a0a;
   --hmc-muted:#2a2540;
-  --hmc-blue-dark:#001e63;
   --hmc-hero:#070707;
 }
 *{box-sizing:border-box}
@@ -66,11 +65,6 @@ h1,h2,h3,.display{font-family:'Questrial','Inter',sans-serif;font-weight:400}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
 
 
-/* ===================== STAT BAND ===================== */
-.statband{background:var(--hmc-text);color:#fff;padding:clamp(28px,4vw,44px) 0}
-.statrow{display:flex;flex-wrap:wrap;gap:clamp(24px,6vw,72px)}
-.statband .hstat b{color:#fff}
-.statband .hstat span{color:rgba(255,255,255,.6)}
 
 /* ===================== SECTIONS ===================== */
 section{padding:clamp(56px,8vw,110px) 0}
@@ -103,6 +97,14 @@ p{margin:0 0 18px}
 .finding.deep{background:var(--hmc-primary);color:#fff}
 .finding.deep p{color:rgba(255,255,255,.9)}
 
+
+.finding.quote{background:#fff;justify-content:space-between;gap:16px}
+.finding.quote p{font-family:'Questrial',sans-serif;font-size:clamp(1.02rem,1.45vw,1.24rem);line-height:1.35;color:var(--hmc-text);margin:0}
+.finding.quote cite{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--hmc-primary)}
+.finding.quote.dark{background:var(--hmc-text)}
+.finding.quote.dark p{color:#fff}
+.finding.quote.dark cite{color:var(--hmc-accent)}
+
 /* ===================== RANKED ===================== */
 .ranked{background:#fff;border:1px solid var(--hmc-text);border-radius:26px;padding:clamp(22px,3vw,34px)}
 .row{padding:13px 0;border-bottom:1px solid #e6e2da}
@@ -115,7 +117,7 @@ p{margin:0 0 18px}
 .row.top3 .track i{background:var(--hmc-primary)}
 
 /* ===================== METHOD ===================== */
-.method{background:var(--hmc-blue-dark);color:#fff;border-radius:26px;padding:clamp(24px,3vw,36px)}
+.method{background:var(--hmc-text);color:#fff;border-radius:26px;padding:clamp(24px,3vw,36px)}
 .method h3{color:var(--hmc-accent)}
 .method dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin:0;font-size:.93rem}
 .method dt{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-top:5px;white-space:nowrap}
@@ -158,17 +160,12 @@ p{margin:0 0 18px}
 .slist{background:#fff;border:1px solid var(--hmc-text);border-radius:22px;padding:24px}
 .slist h3{font-size:1.05rem;margin-bottom:12px}
 .slist ul{margin:0;padding-left:19px;font-size:.93rem;color:var(--hmc-muted);line-height:1.6}
-.shipbox{background:var(--hmc-blue-dark);color:#fff;border-radius:22px;padding:26px;margin-top:20px}
+.shipbox{background:var(--hmc-primary);color:#fff;border-radius:22px;padding:26px;margin-top:20px}
 .shipbox h3{color:var(--hmc-accent);font-size:1.05rem}
 .shipbox p{color:rgba(255,255,255,.9);font-size:.94rem;margin:0 0 10px}
 .shipbox .addr{font-size:1.02rem;line-height:1.5;color:#fff}
 
 
-/* Roll-up overlay in hmc-buttons-1.0.1.css spans the whole button, so it hides
-   the ::before dot on hover. Inset it past the dot (22px padding + 6px dot +
-   14px gap = 42px) so the dot stays put and only the label rolls.
-   Promote this into the shared stylesheet when convenient. */
-.hmc-btn[data-hmc-label]::after{inset:0 22px 0 42px;justify-content:flex-start}
 
 /* ===================== FAQ + FOOTER ===================== */
 .sitefoot{background:var(--hmc-text);color:rgba(255,255,255,.72)}
@@ -227,7 +224,7 @@ footer a{color:var(--hmc-accent)}
   <div class="hero-inner">
     <div class="wrap">
       <p class="hero-eyebrow">Street Medicine Outreach</p>
-      <h1 class="hero-title">Care meets people <em>where they already are.</em></h1>
+      <h1 class="hero-title">Care meets people <em>where they are.</em></h1>
       <p class="hero-tagline">Clinicians, nurses, and volunteers work under bridges, in encampments, and on sidewalks. We also ask people what they need, and we publish what they tell us.</p>
       <div class="cta-row">
         <a data-hmc-label="Adopt our survey" class="hmc-btn hmc-btn-primary" href="#toolkit">Adopt our survey</a>
@@ -237,17 +234,6 @@ footer a{color:var(--hmc-accent)}
     </div>
   </div>
 </header>
-
-<div class="statband">
-  <div class="wrap">
-    <div class="statrow">
-      <div class="hstat"><b>2020</b><span>Operating since</span></div>
-      <div class="hstat"><b>Skid Row</b><span>Primary field site</span></div>
-      <div class="hstat"><b>115</b><span>Self-test kits placed</span></div>
-      <div class="hstat"><b>UCLA</b><span>IRB reviewed</span></div>
-    </div>
-  </div>
-</div>
 
 <main id="main">
 
@@ -287,6 +273,14 @@ footer a{color:var(--hmc-accent)}
       <div class="finding deep" data-reveal><span class="num"><span class="impact-num">87</span>.1%</span><p>Said they were somewhat or very likely to use street medicine again. 75.8% said very likely.</p></div>
       <div class="finding pop" data-reveal><span class="num"><span class="impact-num">42</span>.4%</span><p>Of those who received street medicine care had only ever received those services on the street.</p></div>
       <div class="finding" data-reveal><span class="num"><span class="impact-num">48</span>.0%</span><p>Of those reporting distrust of doctors cited dismissal of symptoms or perceived discrimination.</p></div>
+      <blockquote class="finding quote" data-reveal>
+        <p>&ldquo;I just can&rsquo;t deal with doctors who judge me when I tell them something is wrong. If I&rsquo;m in pain, then believe me.&rdquo;</p>
+        <cite>Skid Row resident</cite>
+      </blockquote>
+      <blockquote class="finding quote dark" data-reveal>
+        <p>&ldquo;When I sit down at the doctor I don&rsquo;t want medicine. I want you to understand my family. My life. Understand me. My mental health.&rdquo;</p>
+        <cite>Skid Row resident</cite>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -381,13 +375,13 @@ footer a{color:var(--hmc-accent)}
         <span class="tag">Report, February 2025</span>
         <h3>Understanding Healthcare Access and Experiences in Skid Row</h3>
         <p>21 pages covering demographics, healthcare access, requested services, healthcare experiences, and a call to action for street medicine leaders and policymakers.</p>
-        <div><a data-hmc-label="Download the report" class="hmc-btn hmc-btn-primary" href="#" data-todo="link report PDF">Download the report</a></div>
+        <div><a data-hmc-label="Download the report" class="hmc-btn hmc-btn-primary" href="./reports/HMC-Skid-Row-Healthcare-Access-Report-Feb2025.pdf">Download the report</a></div>
       </div>
       <div class="report" data-reveal>
         <span class="tag">Data brief, 2024</span>
         <h3>OraQuick HIV Self-Test Distribution</h3>
         <p>Distribution data for 115 recipients across January to August 2024, including prior testing history and demographics.</p>
-        <div><a data-hmc-label="Download the brief" class="hmc-btn hmc-btn-secondary" href="#" data-todo="link HIV brief PDF">Download the brief</a></div>
+        <div><a data-hmc-label="Download the brief" class="hmc-btn hmc-btn-secondary" href="./reports/HMC-OraQuick-HIV-Self-Test-Distribution-2024.pdf">Download the brief</a></div>
       </div>
     </div>
   </div>
@@ -515,7 +509,7 @@ footer a{color:var(--hmc-accent)}
       <div class="faq-group">
         <h5>The program</h5>
         <details class="faq-item"><summary>What is street medicine?</summary><div class="faq-answer">
-          <p>Care delivered where people already are, rather than where a clinic happens to be. Teams work on sidewalks, in encampments, and under bridges, carrying what they need with them.</p>
+          <p>Care delivered where people are, rather than where a clinic happens to be. Teams work on sidewalks, in encampments, and under bridges, carrying what they need with them.</p>
           <p>It exists because a clinic address is useless to someone without transportation, identification, or a reason to trust the building.</p>
         </div></details>
         <details class="faq-item"><summary>Where do you deploy?</summary><div class="faq-answer">
@@ -603,6 +597,7 @@ footer a{color:var(--hmc-accent)}
 <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="./assets/js/vendor/lenis.min.js"></script>
 <script src="./assets/js/hmc-immersive.js"></script>
+<script src="./assets/site/hmc-buttons-1.0.3.js"></script>
 <script>
 /* Ranked-service bars draw in on scroll. Uses IntersectionObserver so it works
    whether or not the GSAP immersive layer is active (it is disabled inside the

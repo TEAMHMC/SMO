@@ -1,4 +1,8 @@
-/* HMC shared button system.
+/* HMC shared button system. v1.0.3
+   1.0.3 fixes the CSS dot vanishing on hover: 1.0.2 documented redrawing it on
+   the overlay but never shipped the rule, and its JS only measures a dot that
+   exists as a child element. Buttons using the ::before dot, which is the
+   default this stylesheet creates, lost the dot for the length of the hover.
    Matches the canonical buttons on healthmatters.clinic so every HMC surface
    reads the same. The roll-up hover on the main site is a Webflow IX2
    interaction, which nothing outside Webflow inherits, so it is reimplemented
@@ -40,7 +44,7 @@
 .hmc-btn-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
 .hmc-btn-primary .hmc-btn-dot { background: #fff; }
 .hmc-btn-secondary .hmc-btn-dot { background: #0f0f0f; }
-.hmc-btn:has(.hmc-btn-dot)::before { display: none; }
+.hmc-btn[data-hmc-dot="off"]::before { display: none; }
 
 /* Roll-up. Implemented as an overlay copy driven by a data attribute rather
    than by injecting child nodes. These surfaces are React apps, and mutating
@@ -51,17 +55,28 @@
 .hmc-btn[data-hmc-label]::after {
   content: attr(data-hmc-label);
   position: absolute;
-  inset: 0;
+  /* Starts after any leading icon or dot so those stay visible on hover. */
+  inset: 0 0 0 var(--hmc-ov-left, 0px);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  background: inherit;
-  color: inherit;
   border-radius: inherit;
+  color: inherit;
+  /* The overlay covers the whole button, so it has to redraw the dot or the
+     dot vanishes for the duration of the hover. Painted as a gradient because
+     a pseudo-element cannot own a child. */
+  background-color: inherit;
+  /* Redraw the ::before dot on the overlay. A pseudo-element cannot own a
+     child, so it is painted as a gradient at the same place the real dot sits:
+     22px left padding + 3px radius = a 6px dot centred at 25px. currentColor
+     keeps it white on primary and dark on secondary, like the real one. */
+  background-image: radial-gradient(circle at 25px 50%, currentColor 0 3px, transparent 3.5px);
+  background-repeat: no-repeat;
   transform: translateY(100%);
   transition: transform .3s ease;
 }
+/* Buttons with no dot get no dot on the overlay either. */
+.hmc-btn[data-hmc-dot="off"][data-hmc-label]::after { background-image: none; }
 .hmc-btn[data-hmc-label]:hover::after { transform: translateY(0); }
 
 /* Keep the label legible on hover. Some hosts ship a global
