@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Street Medicine Outreach | Health Matters Clinic</title>
+<meta name="description" content="Health Matters Clinic delivers field-based care to unhoused communities in Skid Row, Los Angeles, and publishes the research behind it. Survey findings, HIV self-test distribution data, and a survey toolkit any community organization can adopt.">
+<link rel="canonical" href="https://streetmedicine.healthmatters.clinic/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Street Medicine Outreach | Health Matters Clinic">
+<meta property="og:description" content="Field-based care for unhoused communities in Skid Row, and the research that shapes it.">
+<meta property="og:url" content="https://streetmedicine.healthmatters.clinic/">
+<meta property="og:image" content="https://streetmedicine.healthmatters.clinic/photos/hero-outreach.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Questrial&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/hmc-parallax.css">
+<link rel="stylesheet" href="./assets/site/hmc-buttons-1.0.1.css">
+
+<style>
+:root{
+  --hmc-primary:#2333df;
+  --hmc-primary-hover:#1a2ecc;
+  --hmc-secondary:#ff6e40;
+  --hmc-accent:#f9c74f;
+  --hmc-bg:#f5f3ef;
+  --hmc-text:#0a0a0a;
+  --hmc-muted:#2a2540;
+  --hmc-blue-dark:#001e63;
+  --hmc-hero:#070707;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--hmc-bg);color:var(--hmc-text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.measure{max-width:680px}
+h1,h2,h3,.display{font-family:'Questrial','Inter',sans-serif;font-weight:400}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;background:var(--hmc-hero);min-height:min(92vh,820px);display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg-layer{position:absolute;inset:-14% 0;z-index:0;background-image:url('./photos/hero-outreach.jpg');background-size:cover;background-position:center 42%;will-change:transform}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,7,7,.74) 0%,rgba(7,7,7,.28) 38%,rgba(7,7,7,.92) 100%)}
+.hero-glow{position:absolute;left:-10%;bottom:-30%;width:70%;height:80%;z-index:1;pointer-events:none;background:radial-gradient(closest-side,rgba(35,61,255,.42),transparent 70%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding:clamp(48px,9vw,110px) 0 clamp(38px,6vw,72px)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hmc-accent);margin:0 0 22px}
+.hero-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--hmc-accent)}
+.hero-title{color:#fff;font-size:clamp(46px,7.4vw,112px);line-height:.86;letter-spacing:-.02em;max-width:11ch;margin:0 0 26px}
+.hero-title em{font-style:normal;color:var(--hmc-accent)}
+.hero-tagline{color:rgba(255,255,255,.88);font-size:clamp(16px,1.7vw,20px);max-width:56ch;margin:0 0 34px;line-height:1.5}
+.hero-stats{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,60px);border-top:1px solid rgba(255,255,255,.22);padding-top:26px}
+.hstat b{display:block;font-family:'Questrial',sans-serif;font-size:clamp(28px,3.4vw,42px);color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.hstat span{display:block;margin-top:7px;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+/* ===================== SECTIONS ===================== */
+section{padding:clamp(56px,8vw,110px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hmc-primary);margin:0 0 20px}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--hmc-accent)}
+h2{font-size:clamp(30px,4.6vw,58px);line-height:.98;letter-spacing:-.02em;margin:0 0 22px}
+h3{font-size:1.35rem;line-height:1.15;margin:0 0 10px}
+p{margin:0 0 18px}
+.lede{font-size:clamp(17px,1.9vw,21px);line-height:1.5;color:var(--hmc-muted)}
+.twoup{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(28px,4vw,56px);align-items:start}
+
+/* ===================== PHOTO BANDS ===================== */
+.block{width:calc(100% - clamp(28px,4vw,56px));margin:0 auto;border-radius:clamp(20px,2.6vw,34px);overflow:hidden}
+.photoband{position:relative;min-height:clamp(300px,46vw,540px);background-size:cover}
+.photoband .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(20px,3vw,34px);background:linear-gradient(180deg,transparent,rgba(7,7,7,.84));color:#fff;font-size:14px;font-weight:600}
+.pb-ops{background-image:url('./photos/field-operation.jpg');background-position:center 40%}
+.pb-survey{background-image:url('./photos/survey-4th-st.jpg');background-position:center 34%}
+.pb-team{background-image:url('./photos/outreach-team.jpg');background-position:center}
+
+.carefig{border:2px solid var(--hmc-text);border-radius:26px;overflow:hidden;background:#fff;margin:0}
+.carefig img{width:100%;height:auto;display:block}
+.carefig figcaption{padding:16px 20px;font-size:.88rem;color:var(--hmc-muted);border-top:2px solid var(--hmc-text)}
+
+/* ===================== FINDINGS ===================== */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:clamp(14px,1.6vw,20px)}
+.finding{background:#fff;border:2px solid var(--hmc-text);border-radius:22px;padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.finding .num{font-family:'Questrial',sans-serif;font-size:clamp(38px,4.6vw,54px);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.finding p{margin:0;font-size:.95rem;color:var(--hmc-muted);line-height:1.5}
+.finding.pop{background:var(--hmc-accent)}
+.finding.deep{background:var(--hmc-primary);color:#fff}
+.finding.deep p{color:rgba(255,255,255,.9)}
+
+/* ===================== RANKED ===================== */
+.ranked{background:#fff;border:2px solid var(--hmc-text);border-radius:26px;padding:clamp(22px,3vw,34px)}
+.row{padding:13px 0;border-bottom:1px solid #e6e2da}
+.row:last-child{border-bottom:0}
+.rowtop{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:9px}
+.rowtop .label{font-size:.97rem;font-weight:600}
+.rowtop .val{font-size:.9rem;font-weight:700;font-variant-numeric:tabular-nums}
+.track{height:12px;border:2px solid var(--hmc-text);border-radius:999px;overflow:hidden;background:#fff}
+.track i{display:block;height:100%;background:var(--hmc-accent);transform-origin:left}
+.row.top3 .track i{background:var(--hmc-primary)}
+
+/* ===================== METHOD ===================== */
+.method{background:var(--hmc-blue-dark);color:#fff;border-radius:26px;padding:clamp(24px,3vw,36px)}
+.method h3{color:var(--hmc-accent)}
+.method dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin:0;font-size:.93rem}
+.method dt{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-top:5px;white-space:nowrap}
+.method dd{margin:0;color:rgba(255,255,255,.92)}
+
+/* ===================== HIV SPLIT ===================== */
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:stretch;border:2px solid var(--hmc-text);border-radius:28px;overflow:hidden;background:#fff}
+.split .pic{min-height:340px;background-image:url('./photos/hiv-self-test.jpg');background-size:cover;background-position:center 35%}
+.split .txt{padding:clamp(26px,3.4vw,44px)}
+
+/* ===================== REPORTS ===================== */
+.reports{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(14px,1.6vw,20px)}
+.report{background:#fff;border:2px solid var(--hmc-text);border-radius:24px;padding:28px 26px;display:flex;flex-direction:column;gap:12px}
+.report .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hmc-primary)}
+.report p{font-size:.94rem;color:var(--hmc-muted);margin:0;flex:1}
+
+/* ===================== ADOPT ===================== */
+.adopt{background:var(--hmc-text);color:#fff}
+.adopt h2{color:#fff}
+.adopt h2 em{font-style:normal;color:var(--hmc-accent)}
+.adopt .lede{color:rgba(255,255,255,.76)}
+.adopt .eyebrow{color:var(--hmc-accent)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,2.6vw,32px);margin-top:44px}
+.step{border-top:3px solid var(--hmc-accent);padding-top:18px}
+.step h3{color:#fff}
+.step p{font-size:.93rem;color:rgba(255,255,255,.72);margin:0}
+
+/* ===================== KINETIC ===================== */
+.kinetic-wrap{padding:clamp(30px,5vw,54px) 0;background:var(--hmc-bg);border-top:2px solid var(--hmc-text);border-bottom:2px solid var(--hmc-text)}
+
+footer{background:var(--hmc-text);color:rgba(255,255,255,.64);padding:44px 0;font-size:.87rem}
+footer a{color:var(--hmc-accent)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:20px;top:20px;z-index:99;background:#fff;color:#0a0a0a;padding:12px 18px;border-radius:999px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero hmc-parallax-hero">
+  <div class="hero-bg-layer hmc-bg-layer" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <p class="hero-eyebrow">Street Medicine Outreach</p>
+      <h1 class="hero-title">Care meets people <em>where they already are.</em></h1>
+      <p class="hero-tagline">Clinicians, nurses, and volunteers work under bridges, in encampments, and on sidewalks. We also ask people what they need, and we publish what they tell us.</p>
+      <div class="hero-stats">
+        <div class="hstat"><b>2020</b><span>Operating since</span></div>
+        <div class="hstat"><b>75</b><span>Residents surveyed</span></div>
+        <div class="hstat"><b>115</b><span>Self-test kits placed</span></div>
+        <div class="hstat"><b>UCLA</b><span>IRB reviewed</span></div>
+      </div>
+      <div class="cta-row">
+        <a data-hmc-label="Adopt our survey" class="hmc-btn hmc-btn-primary" href="#toolkit">Adopt our survey</a>
+        <a data-hmc-label="Read the research" class="hmc-btn hmc-btn-secondary" href="#research">Read the research</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== PREMISE ===================== -->
+<section>
+  <div class="wrap">
+    <div class="twoup">
+      <div data-reveal>
+        <p class="eyebrow">Why we run research</p>
+        <h2>Being insured is not the same as getting care.</h2>
+        <p class="lede">Most people we surveyed in Skid Row have health coverage. Most still cannot reliably see a doctor. That gap is why this program exists, and it shapes where we deploy.</p>
+        <p>Street medicine reaches people the clinic system does not. Our field surveys make that community's own account of care the basis for how services get designed, funded, and evaluated. Everything below is their data.</p>
+      </div>
+      <figure class="carefig" data-reveal>
+        <img src="./photos/street-level-care.jpg" alt="Health Matters Clinic clinician kneeling on the pavement to take a patient reading beside an encampment" loading="lazy" width="1366" height="768">
+        <figcaption>Vitals taken at street level. No waiting room, no appointment, no identification required.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="block photoband pb-ops">
+  <p class="cap">Field operation in Skid Row. Intake, screening, and wound care run from folding tables on the sidewalk.</p>
+</div>
+
+<!-- ===================== FINDINGS ===================== -->
+<section id="research">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="eyebrow">Findings, Skid Row survey</p>
+      <h2>What 75 residents told us.</h2>
+    </div>
+    <div class="findings">
+      <div class="finding" data-reveal><span class="num"><span class="impact-num">81</span>.3%</span><p>Reported having health insurance. Of those, 74.6% were covered by Medi-Cal.</p></div>
+      <div class="finding pop" data-reveal><span class="num"><span class="impact-num">52</span>.0%</span><p>Still said accessing medical services is challenging. The leading reasons were transportation and problems with insurance.</p></div>
+      <div class="finding" data-reveal><span class="num"><span class="impact-num">85</span>.5%</span><p>Found street medicine helpful, with a further 13.0% saying sometimes helpful.</p></div>
+      <div class="finding deep" data-reveal><span class="num"><span class="impact-num">87</span>.1%</span><p>Said they were somewhat or very likely to use street medicine again. 75.8% said very likely.</p></div>
+      <div class="finding pop" data-reveal><span class="num"><span class="impact-num">42</span>.4%</span><p>Of those who received street medicine care had only ever received those services on the street.</p></div>
+      <div class="finding" data-reveal><span class="num"><span class="impact-num">48</span>.0%</span><p>Of those reporting distrust of doctors cited dismissal of symptoms or perceived discrimination.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REQUESTED SERVICES ===================== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="twoup">
+      <div data-reveal>
+        <p class="eyebrow">What residents asked for</p>
+        <h2>The requests are rarely only clinical.</h2>
+        <p class="lede">Respondents could choose more than one service. Food and housing outrank every medical category, which is why our teams carry referrals as well as supplies.</p>
+        <p>This ranking is the most useful thing the survey produces for partner organizations. It shows a food bank, a housing provider, and a clinic exactly where they sit in the same person's list of needs.</p>
+      </div>
+      <div class="ranked" data-reveal>
+        <div class="row top3"><div class="rowtop"><span class="label">Food assistance</span><span class="val">71.2%</span></div><div class="track"><i style="width:71.2%"></i></div></div>
+        <div class="row top3"><div class="rowtop"><span class="label">Housing assistance</span><span class="val">65.8%</span></div><div class="track"><i style="width:65.8%"></i></div></div>
+        <div class="row top3"><div class="rowtop"><span class="label">HIV testing and counseling</span><span class="val">47.9%</span></div><div class="track"><i style="width:47.9%"></i></div></div>
+        <div class="row"><div class="rowtop"><span class="label">Primary care</span><span class="val">45.2%</span></div><div class="track"><i style="width:45.2%"></i></div></div>
+        <div class="row"><div class="rowtop"><span class="label">Mental health care</span><span class="val">45.2%</span></div><div class="track"><i style="width:45.2%"></i></div></div>
+        <div class="row"><div class="rowtop"><span class="label">COVID-19 testing</span><span class="val">45.2%</span></div><div class="track"><i style="width:45.2%"></i></div></div>
+        <div class="row"><div class="rowtop"><span class="label">Education services</span><span class="val">42.5%</span></div><div class="track"><i style="width:42.5%"></i></div></div>
+        <div class="row"><div class="rowtop"><span class="label">Other STD testing</span><span class="val">41.1%</span></div><div class="track"><i style="width:41.1%"></i></div></div>
+        <div class="row"><div class="rowtop"><span class="label">Wound care</span><span class="val">39.7%</span></div><div class="track"><i style="width:39.7%"></i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HIV ===================== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="split" data-reveal>
+      <div class="pic" role="img" aria-label="Outreach table with OraQuick HIV self-test kits and testing information materials"></div>
+      <div class="txt">
+        <p class="eyebrow">HIV self-test distribution</p>
+        <h2 style="font-size:clamp(26px,3.4vw,42px)">Putting the test in someone's hand changes who gets tested.</h2>
+        <p>HIV testing and counseling was the third most requested service in Skid Row. We ran an OraQuick self-test distribution alongside outreach to meet it.</p>
+        <p>115 people received kits between January and August 2024. Distribution reached an older population than street outreach usually records, with the largest group aged 40 to 49.</p>
+        <p style="margin-bottom:0">A self-test removes the appointment, the identification requirement, and the waiting room in a single step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="block photoband pb-survey">
+  <p class="cap">Survey administered on 4th Street. Interviews were conducted in person so that people who cannot read, write, or use a phone were not excluded.</p>
+</div>
+
+<!-- ===================== METHOD ===================== -->
+<section>
+  <div class="wrap">
+    <div class="twoup">
+      <div class="measure" data-reveal>
+        <p class="eyebrow">Method</p>
+        <h2>How the survey was run.</h2>
+        <p>Participants were approached throughout Skid Row and gave oral consent. Inclusion required being 18 or older, able to consent, fluent in English or Spanish, and either unhoused or living in a Skid Row housing facility.</p>
+        <p>Surveys were conducted as interviews rather than forms, so people who cannot read, write, or use a phone were not excluded. Participation was voluntary, any question could be skipped, and no compensation was offered. No identifying information was collected.</p>
+      </div>
+      <div class="method" data-reveal>
+        <h3>Study parameters</h3>
+        <dl>
+          <dt>Participants</dt><dd>75</dd>
+          <dt>Period</dt><dd>October 2024 to February 2025</dd>
+          <dt>Format</dt><dd>Interview-administered, English and Spanish</dd>
+          <dt>Consent</dt><dd>Oral, voluntary, uncompensated</dd>
+          <dt>Identifiers</dt><dd>None collected</dd>
+          <dt>Ethics</dt><dd>Certified exempt from IRB review under 45 CFR 46.104 category 2 by the UCLA IRB, determined October 3, 2024</dd>
+          <dt>Published</dt><dd>February 2025</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KINETIC MARQUEE ===================== -->
+<div class="kinetic-wrap hmc-kinetic" aria-hidden="true">
+  <div class="hmc-kinetic-row">
+    <span>Street Medicine</span><span class="o">Skid Row</span><span class="accent">Since 2020</span><span>Street Medicine</span><span class="o">Skid Row</span><span class="accent">Since 2020</span>
+  </div>
+</div>
+
+<!-- ===================== REPORTS ===================== -->
+<section>
+  <div class="wrap">
+    <div data-reveal>
+      <p class="eyebrow">Publications</p>
+      <h2>Read the work.</h2>
+    </div>
+    <div class="reports">
+      <div class="report" data-reveal>
+        <span class="tag">Report, February 2025</span>
+        <h3>Understanding Healthcare Access and Experiences in Skid Row</h3>
+        <p>21 pages covering demographics, healthcare access, requested services, healthcare experiences, and a call to action for street medicine leaders and policymakers.</p>
+        <div><a data-hmc-label="Download the report" class="hmc-btn hmc-btn-primary" href="#" data-todo="link report PDF">Download the report</a></div>
+      </div>
+      <div class="report" data-reveal>
+        <span class="tag">Data brief, 2024</span>
+        <h3>OraQuick HIV Self-Test Distribution</h3>
+        <p>Distribution data for 115 recipients across January to August 2024, including prior testing history and demographics.</p>
+        <div><a data-hmc-label="Download the brief" class="hmc-btn hmc-btn-secondary" href="#" data-todo="link HIV brief PDF">Download the brief</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="block photoband pb-team">
+  <p class="cap">Outreach team on site. Volunteers, nursing and medical students, and clinical staff deploy together.</p>
+</div>
+
+<!-- ===================== ADOPT ===================== -->
+<section class="adopt" id="toolkit">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">For community organizations</p>
+      <h2>Run this survey with <em>your own community.</em></h2>
+      <p class="lede">The instrument, the consent script, and the collection protocol are available to any community-based organization documenting healthcare access in the population it serves. Comparable questions across sites produce something none of us can produce alone.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal><h3>The full instrument</h3><p>Survey questions, the oral consent script, and the collection standard operating procedure used in Skid Row.</p></div>
+      <div class="step" data-reveal><h3>Comparable data</h3><p>Keep the core questions intact so results compare across sites. Add your own questions after them.</p></div>
+      <div class="step" data-reveal><h3>Shared findings</h3><p>Contributing organizations are named in the combined report and receive their own site results back.</p></div>
+    </div>
+    <div class="cta-row">
+      <a data-hmc-label="Request the survey toolkit" class="hmc-btn hmc-btn-primary" href="mailto:contact@healthmatters.clinic?subject=Street%20Medicine%20survey%20toolkit">Request the survey toolkit</a>
+      <a data-hmc-label="Talk to the research team" class="hmc-btn hmc-btn-secondary" href="mailto:contact@healthmatters.clinic?subject=Street%20Medicine%20research">Talk to the research team</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 8px"><strong style="color:#fff">Health Matters Clinic</strong></p>
+    <p style="margin:0">Street Medicine Outreach has operated since 2020. Research conducted in Skid Row, Los Angeles.<br>
+    <a href="https://healthmatters.clinic">healthmatters.clinic</a> &nbsp;|&nbsp; <a href="mailto:contact@healthmatters.clinic">contact@healthmatters.clinic</a></p>
+  </div>
+</footer>
+
+<script src="./assets/js/vendor/gsap.min.js"></script>
+<script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="./assets/js/vendor/lenis.min.js"></script>
+<script src="./assets/js/hmc-immersive.js"></script>
+<script>
+/* Ranked-service bars draw in on scroll. Uses IntersectionObserver so it works
+   whether or not the GSAP immersive layer is active (it is disabled inside the
+   Webflow iframe and under prefers-reduced-motion). */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bars = document.querySelectorAll('.track i');
+  if (reduce || !('IntersectionObserver' in window)) return;
+  bars.forEach(function(b){ b.style.transform='scaleX(0)'; b.style.transition='transform 1s cubic-bezier(.2,.7,.3,1)'; });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.style.transform='scaleX(1)';
+      io.unobserve(e.target);
+    });
+  },{threshold:.35});
+  bars.forEach(function(b){ io.observe(b); });
+})();
+</script>
+</body>
+</html>
