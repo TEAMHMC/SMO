@@ -53,6 +53,12 @@ renders every label twice against 1.0.1.
 
 ## Open items
 
+- **The supply shipping address is a placeholder.** `[ADDRESS TO CONFIRM BEFORE PUBLISHING]`
+  in the Join section must be replaced before this page is promoted anywhere. Two
+  conflicting addresses exist in HMC documents: 1360 S Figueroa St Suite D390 (2026
+  capability statement) and 5211 W Adams Blvd #4 (Feb 2025 Skid Row report). Sending
+  donors to the wrong address wastes their money and our goodwill.
+
 - Report PDFs are not linked yet. Both download buttons point at `#`.
 - HIV brief percentages are not published on the page. The source PDF is
   image-only, so prior-testing, age and race figures need confirming against

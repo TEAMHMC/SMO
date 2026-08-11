@@ -136,6 +136,26 @@ p{margin:0 0 18px}
 .step h3{color:#fff}
 .step p{font-size:.93rem;color:rgba(255,255,255,.72);margin:0}
 
+
+/* ===================== GET INVOLVED ===================== */
+.involve{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(14px,1.6vw,20px);margin-top:40px}
+.icard{background:#fff;border:2px solid var(--hmc-text);border-radius:24px;padding:28px 26px;display:flex;flex-direction:column;gap:12px}
+.icard.pop{background:var(--hmc-accent)}
+.icard .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hmc-primary)}
+.icard.pop .tag{color:var(--hmc-text)}
+.icard p{font-size:.94rem;color:var(--hmc-muted);margin:0;flex:1}
+.icard.pop p{color:var(--hmc-text)}
+.icard ul{margin:0;padding-left:19px;font-size:.92rem;color:var(--hmc-muted);line-height:1.55}
+.icard li{margin-bottom:5px}
+.supplies{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(14px,1.6vw,20px);margin-top:20px}
+.slist{background:#fff;border:2px solid var(--hmc-text);border-radius:22px;padding:24px}
+.slist h3{font-size:1.05rem;margin-bottom:12px}
+.slist ul{margin:0;padding-left:19px;font-size:.93rem;color:var(--hmc-muted);line-height:1.6}
+.shipbox{background:var(--hmc-blue-dark);color:#fff;border-radius:22px;padding:26px;margin-top:20px}
+.shipbox h3{color:var(--hmc-accent);font-size:1.05rem}
+.shipbox p{color:rgba(255,255,255,.9);font-size:.94rem;margin:0 0 10px}
+.shipbox .addr{font-size:1.02rem;line-height:1.5;color:#fff}
+
 /* ===================== KINETIC ===================== */
 .kinetic-wrap{padding:clamp(30px,5vw,54px) 0;background:var(--hmc-bg);border-top:2px solid var(--hmc-text);border-bottom:2px solid var(--hmc-text)}
 
@@ -173,6 +193,7 @@ footer a{color:var(--hmc-accent)}
       <div class="cta-row">
         <a data-hmc-label="Adopt our survey" class="hmc-btn hmc-btn-primary" href="#toolkit">Adopt our survey</a>
         <a data-hmc-label="Read the research" class="hmc-btn hmc-btn-secondary" href="#research">Read the research</a>
+        <a data-hmc-label="Volunteer with us" class="hmc-btn hmc-btn-secondary" href="#join">Volunteer with us</a>
       </div>
     </div>
   </div>
@@ -325,6 +346,89 @@ footer a{color:var(--hmc-accent)}
 <div class="block photoband pb-team">
   <p class="cap">Outreach team on site. Volunteers, nursing and medical students, and clinical staff deploy together.</p>
 </div>
+
+
+<!-- ===================== GET INVOLVED ===================== -->
+<section id="join">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">Join the work</p>
+      <h2>Field experience you cannot get in a classroom.</h2>
+      <p class="lede">Street medicine puts students and volunteers alongside clinicians in the field, doing real work: intake, screening, supply runs, and survey collection. Nursing, medical, public health, and social work students have all deployed with SMO.</p>
+    </div>
+    <div class="involve">
+      <div class="icard" data-reveal>
+        <span class="tag">Train and deploy</span>
+        <h3>Become a volunteer</h3>
+        <p>Every HMC volunteer completes Community Mental Health Worker training, parts one and two. Street medicine requires additional training beyond that onboarding, because the field environment asks more of you.</p>
+        <ul>
+          <li>Supervised field hours alongside clinical staff</li>
+          <li>Training tracked in your volunteer record</li>
+          <li>Recurring deployments, not one-off shifts</li>
+        </ul>
+        <div><a class="hmc-btn hmc-btn-primary" data-hmc-label="Start volunteer training" href="https://volunteer.healthmatters.clinic">Start volunteer training</a></div>
+      </div>
+      <div class="icard pop" data-reveal>
+        <span class="tag">Give supplies</span>
+        <h3>Send what the teams carry</h3>
+        <p>Outreach runs on consumables. Socks and hygiene items go out faster than anything else we carry, and wound care was the ninth most requested service in our own survey.</p>
+        <p>Clinical items are coordinated directly with the team. Email before shipping anything medical so it matches what is actually needed and in date.</p>
+        <div><a class="hmc-btn hmc-btn-secondary" data-hmc-label="Email about supplies" href="mailto:contact@healthmatters.clinic?subject=Street%20Medicine%20supply%20donation">Email about supplies</a></div>
+      </div>
+      <div class="icard" data-reveal>
+        <span class="tag">Fund the run</span>
+        <h3>Donate</h3>
+        <p>A donation buys the supplies above and keeps deployments on a regular schedule rather than an occasional one. Consistency is what builds trust on the street, and trust is what the survey shows is missing.</p>
+        <div><a class="hmc-btn hmc-btn-primary" data-hmc-label="Donate" href="https://www.healthmatters.clinic/donate">Donate</a></div>
+      </div>
+    </div>
+
+    <div class="supplies">
+      <div class="slist" data-reveal>
+        <h3>Most needed, no coordination required</h3>
+        <ul>
+          <li>New socks, adult sizes</li>
+          <li>Hygiene kits: soap, toothbrush, toothpaste, deodorant</li>
+          <li>Bottled water and shelf-stable snacks</li>
+          <li>Sunscreen and lip balm</li>
+          <li>Feminine hygiene products</li>
+          <li>Reusable bags and ponchos</li>
+          <li>Blankets and emergency mylar blankets</li>
+        </ul>
+      </div>
+      <div class="slist" data-reveal>
+        <h3>Basic first aid, unopened and in date</h3>
+        <ul>
+          <li>Adhesive bandages and gauze pads</li>
+          <li>Medical tape and elastic wrap</li>
+          <li>Saline wound wash</li>
+          <li>Antibiotic ointment packets</li>
+          <li>Nitrile gloves, sizes M and L</li>
+          <li>Hand sanitizer</li>
+        </ul>
+      </div>
+      <div class="slist" data-reveal>
+        <h3>Coordinate with us first</h3>
+        <ul>
+          <li>Anything requiring a prescription or a license to distribute</li>
+          <li>Test kits and screening supplies</li>
+          <li>Diagnostic equipment</li>
+          <li>Bulk pallets or anything needing storage</li>
+        </ul>
+        <p style="margin:12px 0 0;font-size:.9rem;color:var(--hmc-muted)">Email contact@healthmatters.clinic before sending any of the above. Unsolicited clinical donations often arrive expired or unusable, and we would rather spend your money well.</p>
+      </div>
+    </div>
+
+    <div class="shipbox" data-reveal>
+      <h3>Where to send supplies</h3>
+      <p>Ship or drop off during business hours. Tell us it is coming so someone is there to receive it.</p>
+      <p class="addr"><strong>[ADDRESS TO CONFIRM BEFORE PUBLISHING]</strong><br>
+      Health Matters Clinic, attention Street Medicine Outreach<br>
+      Los Angeles, CA</p>
+      <p style="margin-top:12px">Questions: <a href="mailto:contact@healthmatters.clinic" style="color:var(--hmc-accent)">contact@healthmatters.clinic</a></p>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== ADOPT ===================== -->
 <section class="adopt" id="toolkit">
